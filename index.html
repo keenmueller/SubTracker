@@ -1,0 +1,63 @@
+<!-- CS 356 project -->
+
+<!DOCTYPE html>
+<html lang=" " dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Subscription Tracker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          All Services
+          <table>
+            <thead>
+              <th>Services</th>
+              <th>Price</th>
+            </thead>
+            <tbody id="all_services">
+            </tbody>
+          </table><br/>
+          Add a Service
+          <form class="serviceForm">
+            <label>Service Name: </label>
+            <input id="new_name" type="text" placeholder="Service Name" name="sName" required /> <br/>
+            <label>Service Price: $</label>
+            <input id="new_price" type="text" placeholder="5.99" name="price" required />
+            <button type="button" onclick="newService(sName.value, price.value)">Submit</button>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          User Services
+          <table>
+            <thead>
+              <th>Services</th>
+              <th>Price</th>
+            </thead>
+            <tbody id="user_services">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        loadData();
+      })
+    </script>
+  </body>
+</html>
